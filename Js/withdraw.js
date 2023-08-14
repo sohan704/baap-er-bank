@@ -13,6 +13,12 @@ document.getElementById('btn-withdraw').addEventListener('click',function(){
   const previousBalanceString = balanceElement.innerText;
   previousBalance = parseFloat(previousBalanceString);
 
+  if(previousBalance < withdrawValue){
+    alert('Baap er bank a ato taka nai');
+    withdrawInputElement.value = ' ';
+    return;
+  }
+
   const newBalance = previousBalance - withdrawValue;
 
   WithdrawElement.innerText = newWithdrawAmount;
